@@ -3,6 +3,130 @@
     ViewBag.Title = "Register";
 }
 
+<script type = "text/javascript">
+    function MentSubInt() {
+        var mentInterests = document.getElementById("MentorInterest");
+        var interest = mentInterests.options[mentInterests.selectedIndex].text;
+
+        document.getElementById("MentorSubInterest").options = 0;
+
+        if (interest == "Health & Wellness") {
+            document.getElementById("MentorSubInterest").options[0] = new Option("Fitness");
+            document.getElementById("MentorSubInterest").options[1] = new Option("Dieting");
+            document.getElementById("MentorSubInterest").options[2] = new Option("Spiritual");
+        }
+        else if (interest == "Education") {
+            document.getElementById("MentorSubInterest").options[0] = new Option("College");
+            document.getElementById("MentorSubInterest").options[1] = new Option("Language/Writing");
+        }
+        else if (interest == "Business") {
+            document.getElementById("MentorSubInterest").options[0] = new Option("Finance");
+            document.getElementById("MentorSubInterest").options[1] = new Option("Marketing");
+            document.getElementById("MentorSubInterest").options[2] = new Option("Accounting");
+            document.getElementById("MentorSubInterest").options[3] = new Option("Management");
+            document.getElementById("MentorSubInterest").options[4] = new Option("Information Sciences");
+            document.getElementById("MentorSubInterest").options[5] = new Option("Human Resources");
+            document.getElementById("MentorSubInterest").options[6] = new Option("Entrepreneurship");
+        }
+        else if (interest == "Arts") {
+            document.getElementById("MentorSubInterest").options[0] = new Option("Visual");
+            document.getElementById("MentorSubInterest").options[1] = new Option("Literary");
+            document.getElementById("MentorSubInterest").options[2] = new Option("Performing");
+            document.getElementById("MentorSubInterest").options[3] = new Option("Fashion");
+
+        }
+        else if (interest == "Personal Advice") {
+            document.getElementById("MentorSubInterest").options[0] = new Option("Family");
+            document.getElementById("MentorSubInterest").options[1] = new Option("Finances");
+            document.getElementById("MentorSubInterest").options[2] = new Option("Dating");
+            document.getElementById("MentorSubInterest").options[3] = new Option("Marriage");
+            document.getElementById("MentorSubInterest").options[4] = new Option("Work");
+            document.getElementById("MentorSubInterest").options[5] = new Option("Transition");
+            document.getElementById("MentorSubInterest").options[6] = new Option("Career Development");
+        }
+        else if (interest == "Sports") {
+            document.getElementById("MentorSubInterest").options[0] = new Option("Baseball");
+            document.getElementById("MentorSubInterest").options[1] = new Option("Basketball");
+            document.getElementById("MentorSubInterest").options[2] = new Option("Football");
+            document.getElementById("MentorSubInterest").options[3] = new Option("Soccer");
+            document.getElementById("MentorSubInterest").options[4] = new Option("Golf");
+            document.getElementById("MentorSubInterest").options[5] = new Option("Outdoorsmnaship");
+        }
+        else {
+            document.getElementById("MentorSubInterest").options = 0;
+        }
+    }
+    function MentSubInt2() {
+        var menteeInterests = document.getElementById("MenteeInterest");
+        var interest = menteeInterests.options[menteeInterests.selectedIndex].text;
+
+        document.getElementById("MentorSubInterest").options = 0;
+
+        if (interest == "Health & Wellness") {
+            document.getElementById("MenteeSubInterest").options[0] = new Option("Fitness");
+            document.getElementById("MenteeSubInterest").options[1] = new Option("Dieting");
+            document.getElementById("MenteeSubInterest").options[2] = new Option("Spiritual");
+        }
+        else if (interest == "Education") {
+            document.getElementById("MenteeSubInterest").options[0] = new Option("College");
+            document.getElementById("MenteeSubInterest").options[1] = new Option("Language/Writing");
+        }
+        else if (interest == "Business") {
+            document.getElementById("MenteeSubInterest").options[0] = new Option("Finance");
+            document.getElementById("MenteeSubInterest").options[1] = new Option("Marketing");
+            document.getElementById("MenteeSubInterest").options[2] = new Option("Accounting");
+            document.getElementById("MenteeSubInterest").options[3] = new Option("Management");
+            document.getElementById("MenteeSubInterest").options[4] = new Option("Information Sciences");
+            document.getElementById("MenteeSubInterest").options[5] = new Option("Human Resources");
+            document.getElementById("MenteeSubInterest").options[6] = new Option("Entrepreneurship");
+        }
+        else if (interest == "Arts") {
+            document.getElementById("MenteeSubInterest").options[0] = new Option("Visual");
+            document.getElementById("MenteeSubInterest").options[1] = new Option("Literary");
+            document.getElementById("MenteeSubInterest").options[2] = new Option("Performing");
+            document.getElementById("MenteeSubInterest").options[3] = new Option("Fashion");
+
+        }
+        else if (interest == "Personal Advice") {
+            document.getElementById("MenteeSubInterest").options[0] = new Option("Family");
+            document.getElementById("MenteeSubInterest").options[1] = new Option("Finances");
+            document.getElementById("MenteeSubInterest").options[2] = new Option("Dating");
+            document.getElementById("MenteeSubInterest").options[3] = new Option("Marriage");
+            document.getElementById("MenteeSubInterest").options[4] = new Option("Work");
+            document.getElementById("MenteeSubInterest").options[5] = new Option("Transition");
+            document.getElementById("MenteeSubInterest").options[6] = new Option("Career Development");
+        }
+        else if (interest == "Sports") {
+            document.getElementById("MenteeSubInterest").options[0] = new Option("Baseball");
+            document.getElementById("MenteeSubInterest").options[1] = new Option("Basketball");
+            document.getElementById("MenteeSubInterest").options[2] = new Option("Football");
+            document.getElementById("MenteeSubInterest").options[3] = new Option("Soccer");
+            document.getElementById("MenteeSubInterest").options[4] = new Option("Golf");
+            document.getElementById("MenteeSubInterest").options[5] = new Option("Outdoorsmnaship");
+        }
+        else {
+            document.getElementById("MenteeSubInterest").options = 0;
+        }
+    }
+
+    function setVisibilities() {
+        var selectedInterests = document.getElementById("interestedRole")
+        var currentInterest = selectedInterests.options[selectedInterests.selectedIndex].text;
+        if (currentInterest == "Mentor") {
+            document.getElementById("menteeAreaOfInterest").style.visibility = "hidden"
+            document.getElementById("mentorAreaOfInterest").style.visibility = "visible"
+        }
+        else if (currentInterest == "Mentee") {
+            document.getElementById("mentorAreaOfInterest").style.visibility = "hidden"
+            document.getElementById("menteeAreaOfInterest").style.visibility = "visible"
+        }
+        else {
+            document.getElementById("mentorAreaOfInterest").style.visibility = "visible"
+            document.getElementById("menteeAreaOfInterest").style.visibility = "visible"
+        }
+    }
+</script>
+
 <h2>@ViewBag.Title.</h2>
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -33,6 +157,59 @@
         @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            age:
+            <input type="number" name="age" /><br>
+            Gender:
+            <select name="gender">
+                <option>Male</option>
+                <option>Female</option>
+            </select><br>
+
+            I am interested in being a:<br>
+            <select name="interestedRole" id="interestedRole" onchange="setVisibilities()">
+                <option>Mentor and Mentee</option>
+                <option>Mentee</option>
+                <option>Mentor</option>
+            </select>
+            </div>
+        </div>
+    <div class="from-group">
+        <div class="col-md-10">
+            <br>Area of Interest:
+            <div id="mentorAreaOfInterest">
+                Mentor:<br>
+                <select name='mentorInterest' id="MentorInterest" onchange="MentSubInt()">
+                    <option>Select Interest</option>
+                    <option>Health & Wellness</option>
+                    <option>Education</option>
+                    <option>Business</option>
+                    <option>Arts</option>
+                    <option>Personal Advice</option>
+                    <option>Sports</option>
+                </select>
+                <select name='mentorSubInterest' id="MentorSubInterest">
+                    <option value="">Select Sub-Interest</option>
+                </select>
+            </div>
+            <div id="menteeAreaOfInterest">
+                Mentee:<br>
+                <select name='menteeInterest' id="MenteeInterest" onchange="MentSubInt2()">
+                    <option>Select Interest</option>
+                    <option>Health & Wellness</option>
+                    <option>Education</option>
+                    <option>Business</option>
+                    <option>Arts</option>
+                    <option>Personal Advice</option>
+                    <option>Sports</option>
+                </select>
+                <select name='menteeSubInterest' id="MenteeSubInterest">
+                    <option value="">Select Sub-Interest</option>
+                </select>
+            </div>
         </div>
     </div>
     <div class="form-group">
